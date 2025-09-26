@@ -83,10 +83,12 @@ public class SellerDaoJDBC implements SellerDAO {
             st = conn.prepareStatement(
                     "Delete from seller where ID = ?"
             );
-            //TODO: implementar exceção para capturar id inxexistente e retornar erro;
-
             st.setInt(1, id);
-            st.executeUpdate();
+            int rowsAffected = st.executeUpdate();
+
+            if (rowsAffected == 0) {
+                throw new DbException("Error: Id " + id + " does not exist!");
+            }
         } catch (SQLException e){
             throw new DbException(e.getMessage());
         }

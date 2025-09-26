@@ -16,34 +16,34 @@ public class program {
         Seller seller = sellerDAO.findById(3);
         System.out.println(seller);
 
-//        System.out.println("\n=== Test 2: seller findByDepartment ===");
-//        Department department = new Department(2,null);
-//        List<Seller> list = sellerDAO.findByDepartment(department);
-//        for(Seller obj : list){
-//            System.out.println(obj);
-//        }
-//
-//        System.out.println("\n=== Test 3: seller findAll ===");
-//        list = sellerDAO.findAll();
-//        for(Seller obj : list) {
-//            System.out.println(obj);
-//        }
-//
-//        System.out.println("\n=== Test 4: seller insert ===");
-//        Seller newSeller = new Seller( "greg@gmail.com", department, 4000.0, new Date(), "Greg da Silva", null);
-//        sellerDAO.insert(newSeller);
-//        System.out.println("Inserted! New id = " + newSeller.getId());
-//
-//        System.out.println("\n=== Test 5: seller update ===");
-//        seller = sellerDAO.findById(2);
-//        seller.setEmail("margarina_qualy@email.com");
-//        sellerDAO.update(seller);
-//        System.out.println("Update completed ");
+        System.out.println("\n=== Test 2: seller findByDepartment ===");
+        Department department = new Department(2,null);
+        List<Seller> list = sellerDAO.findByDepartment(department);
+        for(Seller obj : list){
+            System.out.println(obj);
+        }
+
+        System.out.println("\n=== Test 3: seller findAll ===");
+        list = sellerDAO.findAll();
+        for(Seller obj : list) {
+            System.out.println(obj);
+        }
+
+        System.out.println("\n=== Test 4: seller insert ===");
+        Seller newSeller = new Seller( "greg@gmail.com", department, 4000.0, new Date(), "Greg da Silva", null);
+        sellerDAO.insert(newSeller);
+        System.out.println("Inserted! New id = " + newSeller.getId());
+
+        System.out.println("\n=== Test 5: seller update ===");
+        seller = sellerDAO.findById(2);
+        seller.setEmail("margarina_qualy@email.com");
+        sellerDAO.update(seller);
+        System.out.println("Update completed ");
 
         System.out.println("\n=== Test 6: seller delete ===");
         System.out.println("Enter seller id for delete: ");
-        int idIn = sc.nextInt();
-        sellerDAO.deleteById(idIn);
+        int id = sc.nextInt();
+        sellerDAO.deleteById(id);
         System.out.println("Delete completed. ");
 
     }
